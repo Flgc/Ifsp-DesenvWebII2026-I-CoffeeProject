@@ -1,3 +1,18 @@
+/* HEADER */
+header {
+    background-color: lightblue;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Container inside the header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 /* header buttons*/
 header button {
     background-color: #04AA6D;
@@ -15,10 +30,18 @@ header button:hover {
     transform: scale(1.05);
 }
 
+/* Global container*/
 .container {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .card {
@@ -28,14 +51,23 @@ header button:hover {
     display: flex;
 }
 
-.card .card-image {
+.card-image {
     width: 200px;
 }
 
-.card .card-content {
+.card-content {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    flex: 1;
+}
+
+/* button area */
+.card-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 /* General buttons */

@@ -18,7 +18,7 @@ interface Product {
 
 
 export class App {
-  page = signal('products');
+  page = signal('Products');
   products: Product[] = [
     { id: '1', name: 'Coffee 1', description: 'Extra-strong type' },
     { id: '2', name: 'Coffee 2', description: 'Flavoured type' },
