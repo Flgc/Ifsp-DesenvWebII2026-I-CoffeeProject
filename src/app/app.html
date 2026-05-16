@@ -1,36 +1,42 @@
 <header>
   <div class="container">
-    <a href="#">NgCoffee</a>
-    <a href="#">Carrinho</a>
+    <button (click)="goTo('products')">NgCoffee</button>
+    <button (click)="goTo('cart')">Cart ({{cart.length}})</button>
   </div>
 </header>
 
 <main>
 
   <div class="container">
-    <h2>LISTA DE PRODUTOS</h2>
-    <div class="card-list">
+    <p>page {{ page() }} </p>
+
+    @if(page() ==="products"){
+    <h2>PRODUCT LIST</h2>
+    <div class="product-list">
+      @for (product of products; track product.id){
       <div class="card">
         <div class="card-content">
-          <span class="title">Coffee 1</span>
-          <span class="description">Coffee 1 description</span>
-          <button>Adicionar ao Carrinho</button>
+          <span class="title">{{product.name}}</span>
+          <span class="description">{{product.description}}</span>
+          <button (click)="addCart(product)">Add to cart</button>
         </div>
       </div>
-      <div class="card">
-        <div class="card-content">
-          <span class="title">Coffee 2</span>
-          <span class="description">Coffee 2 description</span>
-          <button>Adicionar ao Carrinho</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <span class="title">Coffee 3</span>
-          <span class="description">Coffee 3 description</span>
-          <button>Adicionar ao Carrinho</button>
-        </div>
-      </div>
+      }
     </div>
+    }
+    @else{
+    <h2>ITEMS IN CART</h2>
+    <div class="cart-list">
+      @for(product of cart; track $index){
+      <div class="card">
+        <div class="card-content">
+          <span class="title">{{product.name}}</span>
+          <span class="description">{{product.description}}</span>
+          <button (click)="removeCart($index)">Remove from cart</button>
+        </div>
+      </div>
+      }
+    </div>
+    }
   </div>
 </main>

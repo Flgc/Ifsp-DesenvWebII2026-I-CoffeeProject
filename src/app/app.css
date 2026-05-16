@@ -1,13 +1,18 @@
-header {
-    background-color: lightblue;
-    height: 40px;
-    display: flex;
-    align-items: center;
+/* header buttons*/
+header button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
+header button:hover {
+    background-color: #0399609a;
+    transform: scale(1.05);
 }
 
 .container {
@@ -31,4 +36,21 @@ header .container {
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
+
+/* General buttons */
+button {
+    background-color: #2910a5;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #5b65d4;
+    transform: scale(1.05);
 }
